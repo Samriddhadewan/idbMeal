@@ -6,12 +6,24 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Components/Home/Home';
+import About from './Components/About/About';
+import { Meals } from './Components/Meals/Meals';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
     element: <Home />,
+    children: [
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/meals",
+        loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
+        element: <Meals></Meals>
+      }
+    ]
   },
 ]);
 

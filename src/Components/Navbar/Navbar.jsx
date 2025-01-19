@@ -6,8 +6,8 @@ const Navbar = () => {
         <h2 className='text-3xl font-bold'>Meal Store</h2>
         <ul className='flex font-semibold te gap-4'>
             <NavLink>Contact</NavLink>
-            <NavLink>Meals</NavLink>
-            <NavLink>About</NavLink>
+            <NavLink to="/meals">Meals</NavLink>
+            <NavLink to='/about'>About</NavLink>
         </ul>
     </div>
   )
