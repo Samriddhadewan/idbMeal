@@ -5,11 +5,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Home from './Components/Home/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
+    element: <Home />,
   },
 ]);
 
